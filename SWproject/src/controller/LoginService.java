@@ -3,13 +3,15 @@ package controller;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
- 
+
+import org.sqlite.SQLiteConnection;
+
 import asset.DBConnectionMgr;
  
 public class LoginService {
     public static void main(String[] args) {
          
-        boolean test = loginTest("test", "1234");
+        boolean test = loginTest("2013905020", "1234");
          
         System.out.println("로그인 결과 :"+test);
     }
@@ -29,7 +31,7 @@ public class LoginService {
             con = pool.getConnection();
  
             // 
-            sql = "select password from member_test where id=?";
+            sql = "select password from user where id=?";
  
             // 
             pstmt = con.prepareStatement(sql);

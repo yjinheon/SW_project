@@ -36,17 +36,37 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import org.sqlite.SQLiteConfig;
+import java.io.ByteArrayInputStream;
+
+import java.io.File;
+
+import java.io.InputStream;
+
+import java.sql.Connection;
+
+import java.sql.DriverManager;
+
+import java.sql.PreparedStatement;
+
+import java.sql.ResultSet;
+
+import java.sql.SQLException;
+
+
+
+import org.sqlite.SQLiteConfig;
+
 
 /**
  * Manages a java.sql.Connection pool.
  *
- * @author  Anil Hemrajani
+ 
  */
 public class DBConnectionMgr {
     private Vector<ConnectionObject> connections = new Vector<ConnectionObject>(10);
     private String _driver = "org.sqlite.JDBC",
     
-    _url = "jdbc:sqlite:C:\\Users\\Jinheon\\Documents\\project_db\\member.sql",
+    _url = "jdbc:sqlite:C:\\Users\\Jinheon\\Documents\\project_db\\Member.db",
     _user = "admin",
     _password = "admin";
 

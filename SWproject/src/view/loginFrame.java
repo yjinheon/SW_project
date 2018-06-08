@@ -3,6 +3,7 @@ import javax.imageio.ImageIO;
 
 import javax.swing.*;
 
+import Signup.MemberProc;
 import controller.LoginService;
 import java.awt.GraphicsEnvironment;
 import java.awt.Color;
@@ -32,7 +33,7 @@ public class loginFrame extends JFrame implements ActionListener{
     public loginFrame() {
         setTitle("로그인");
         setSize(fweight, fheight);
-        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); //�ݱ⸦ ������ ���α׷��� ����ȴ�
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); //
         setLayout(null);
         setLocation(200,20);
         
@@ -78,14 +79,14 @@ public class loginFrame extends JFrame implements ActionListener{
         bt.addActionListener(this);
         layeredPane.add(bt);
         
-        bt2 = new JButton(new ImageIcon("img/signup.png"));
+        bt2 = new JButton(new ImageIcon("img/img/signup_g.png"));
         bt2.setSize(20,20);
-        bt2.setBackground(Color.black);
         bt2.setBounds(340, 550, 104, 48);
         bt2.setBorderPainted(false);
         bt2.setFocusPainted(false);
         bt2.setContentAreaFilled(false);
         bt2.addActionListener(this);
+        layeredPane.add(bt2);
         //layeredPane.add(bt2);
         
         layeredPane.add(panel);
@@ -107,19 +108,25 @@ public class loginFrame extends JFrame implements ActionListener{
 		char[] pass = passwordField.getPassword();
 		String password = new String(pass);
 		
-		//id
-		if(id.equals("id1") || password.equals("pss1")) {
-			JOptionPane.showMessageDialog(null, "환영합니다");
+		if(e.getSource()==bt2) {
+			JOptionPane.showMessageDialog(null, "버튼2!");
+			new MemberProc();
+		}
+		
+		if(e.getSource()==bt) {
+		if(id.equals("") || password.equals("")) {
+			JOptionPane.showMessageDialog(null, "빈칸이 있음");
 		}else {
 			boolean existLogin = LoginService.loginTest(id, password);
 			
 			if(existLogin) {
-				JOptionPane.showMessageDialog(null, "ㄴㄴㄴ");
+				JOptionPane.showMessageDialog(null, "환영합니다");
 			}else {
-				JOptionPane.showMessageDialog(null, "시험2");
+				JOptionPane.showMessageDialog(null, "로그인 실패");
 			}
 		}
 		
 	}
+   }
 }
 
