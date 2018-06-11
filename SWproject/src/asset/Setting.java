@@ -15,7 +15,7 @@ public class Setting {
 	private static Dimension windowSize = Toolkit.getDefaultToolkit().getScreenSize();
 
 	// prefix 'b' means Basic setting
-	public static Font bFont = new Font("¹è´ÞÀÇ¹ÎÁ· ÇÑ³ª", Font.BOLD, 12);
+	public static Font bFont = new Font("í•œë‚˜ëŠ” ì—´í•œì‚´", Font.BOLD, 12);
 	public static Color bColor = new Color(36, 205, 198);
 	public static Point bPoint = new Point(width, height); // 1600, 900
 	public static Dimension bDimen = new Dimension(width, height);
@@ -41,7 +41,7 @@ public class Setting {
 	public static Rectangle timeLabel = new Rectangle(0, 0, 100, 20);
 
 	
-	// ManageView ¿¡ µé¾î°¥ °Íµé
+	// ManageView ï¿½ï¿½ ï¿½ï¿½î°¥ ï¿½Íµï¿½
 	public static Rectangle layeredPane = bRectangle;
 	public static Rectangle backGround = bRectangle;
 	public static Rectangle myStarPanel = bRectangle;

@@ -1,2 +1,10 @@
 eclipse.preferences.version=1
+encoding//src/NResSeats/ResWindow.java=EUC-KR
+encoding//src/Signup/MemberDAO.java=UTF-8
+encoding//src/Signup/MemberDTO.java=UTF-8
+encoding//src/Signup/MemberProc.java=UTF-8
 encoding//src/asset/DBConnectionMgr.java=UTF-8
+encoding//src/controller/LoginService.java=UTF-8
+encoding//src/controller/Menuservice.java=UTF-8
+encoding//src/test/Logintest.java=UTF-8
+encoding//src/view/loginFrame.java=UTF-8

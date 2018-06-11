@@ -26,7 +26,7 @@ public class ManageView extends JFrame {
         setSize(1600, 900);
         setTitle("ManageView");
         setLayout(null);
-        // ³» À©µµ¿ì È­¸é
+        // ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È­ï¿½ï¿½
         Dimension frameSize = this.getSize();
         Dimension windowSize = Toolkit.getDefaultToolkit().getScreenSize();
         setLocation((windowSize.width - frameSize.width) / 2, (windowSize.height - frameSize.height) / 2);
@@ -34,23 +34,23 @@ public class ManageView extends JFrame {
         layeredPane.setBounds(0, 0, 1600, 900);
         layeredPane.setLayout(null);
  
-        // ¹è°æ
+        // ï¿½ï¿½ï¿½
         JPanel myPanel = new MyPanel();
         myPanel.setLayout(null);
         myPanel.setBounds(0, -30, 1600, 900);
-        // ½Ã°è
+        // ï¿½Ã°ï¿½
         ImgClock imgClock = new ImgClock();
         imgClock.setLayout(null);
         imgClock.setBounds(15, 20, 179, 149);
-        imgClock.setOpaque(false); // ¹è°æÀÌ Åõ¸íÃ³¸®
+        imgClock.setOpaque(false); // ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ã³ï¿½ï¿½
         new Thread(imgClock).start();
-        // ½Ã°è ±Û¾¾
+        // ï¿½Ã°ï¿½ ï¿½Û¾ï¿½
         ClockMessage clockMessage = new ClockMessage();
         clockMessage.setBounds(80, 53, 100, 100);
         clockMessage.setOpaque(false);
         new Thread(clockMessage).start();
  
-        // ¿òÁ÷ÀÌ´Â ±¤¿øÃ³¸®
+        // ï¿½ï¿½ï¿½ï¿½ï¿½Ì´ï¿½ ï¿½ï¿½ï¿½ï¿½Ã³ï¿½ï¿½
         MyStarPanel myStarPanel = new MyStarPanel();
         myStarPanel.setLayout(null);
         myStarPanel.setBounds(0, -30, 1600, 900);
@@ -59,8 +59,8 @@ public class ManageView extends JFrame {
          
          
          
-        //TODO ¿©±âµµ °è¼Ó Àâ¾ÆÁÜ
-        // ÃÖÁ¾ »ðÀÔ
+        //TODO ï¿½ï¿½ï¿½âµµ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½
+        // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         layeredPane.add(myPanel, new Integer(0));
         layeredPane.add(imgClock, new Integer(4));
         layeredPane.add(clockMessage, new Integer(5));
@@ -72,7 +72,7 @@ public class ManageView extends JFrame {
         new ManageView();
     }
  
-    // ¸ÞÀÎ ¹è°æ È­¸é
+    // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ È­ï¿½ï¿½
     class MyPanel extends JPanel {
         Image image;
         public MyPanel() {
@@ -85,14 +85,14 @@ public class ManageView extends JFrame {
         }
     }
  
-    // ½Ã°èÀÌ¹ÌÁö
+    // ï¿½Ã°ï¿½ï¿½Ì¹ï¿½ï¿½ï¿½
     class ImgClock extends JPanel implements Runnable {
         Image img[] = new Image[4];
         int i = 2;
         public ImgClock() {
-            img[1] = Toolkit.getDefaultToolkit().createImage("img/cl1.png");
-            img[2] = Toolkit.getDefaultToolkit().createImage("img/cl2.png");
-            img[3] = Toolkit.getDefaultToolkit().createImage("img/cl3.png");
+            img[1] = Toolkit.getDefaultToolkit().createImage("img/img/cl1.png");
+            img[2] = Toolkit.getDefaultToolkit().createImage("img/img/cl2.png");
+            img[3] = Toolkit.getDefaultToolkit().createImage("img/img/cl3.png");
             img[0] = img[1];
         }
         @Override
@@ -129,7 +129,7 @@ public class ManageView extends JFrame {
         }
     }
  
-    // ½Ã°è±Û¾¾
+    // ï¿½Ã°ï¿½Û¾ï¿½
     class ClockMessage extends JPanel implements Runnable {
         int i = Calendar.getInstance().get(Calendar.AM_PM);
         String[] ampm = { "AM", "PM" };
@@ -143,12 +143,12 @@ public class ManageView extends JFrame {
             timeLabel = new JLabel(time);
             timeLabel.setBounds(0, 0, 100, 20);
             timeLabel.setForeground(new Color(36, 205, 198));
-            timeLabel.setFont(new Font("¹è´ÞÀÇ¹ÎÁ· ÇÑ³ª", Font.BOLD, 12));
+            timeLabel.setFont(new Font("ï¿½ï¿½ï¿½ï¿½Ç¹ï¿½ï¿½ï¿½ ï¿½Ñ³ï¿½", Font.BOLD, 12));
  
             ampmLabel = new JLabel(ampm[i]);
             ampmLabel.setBounds(15, 20, 100, 30);
             ampmLabel.setForeground(new Color(36, 205, 198));
-            ampmLabel.setFont(new Font("¹è´ÞÀÇ¹ÎÁ· ÇÑ³ª", Font.BOLD, 12));
+            ampmLabel.setFont(new Font("ï¿½ï¿½ï¿½ï¿½Ç¹ï¿½ï¿½ï¿½ ï¿½Ñ³ï¿½", Font.BOLD, 12));
  
             add(timeLabel, BorderLayout.NORTH);
             add(ampmLabel, BorderLayout.CENTER);
@@ -168,7 +168,7 @@ public class ManageView extends JFrame {
         }
     }
  
-    // ±¤¿øÃ³¸®
+    // ï¿½ï¿½ï¿½ï¿½Ã³ï¿½ï¿½
     class MyStarPanel extends JPanel implements Runnable {
         Image img;
         int i = 1;
@@ -176,7 +176,7 @@ public class ManageView extends JFrame {
         int sx = 77, sy=0;
  
         public MyStarPanel() {
-            img = Toolkit.getDefaultToolkit().createImage("img/starDdong.png");
+            img = Toolkit.getDefaultToolkit().createImage("img/img/starDdong.png");
         }
         @Override
         public void paint(Graphics g) {
@@ -198,12 +198,12 @@ public class ManageView extends JFrame {
                     repaint();
                 } while (true);
             } catch (Exception e) {
-                System.out.println("¹«½¼ ¿¡·±ÁöÂü. ");
+                System.out.println("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½. ");
             }
         }
  
     }
  
-    // TODO °è¼Ó µé¾î°¨
+    // TODO ï¿½ï¿½ï¿½ ï¿½ï¿½î°¨
  
 }

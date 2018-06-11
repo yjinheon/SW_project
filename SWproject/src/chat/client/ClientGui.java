@@ -20,7 +20,7 @@ public class ClientGui extends JFrame implements ActionListener {
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setVisible(true);
 		setBounds(200,100,400,600);
-		setTitle("클라이언트");
+		setTitle("채팅");
 		
 		client.setGui(this);
 		client.connect();
@@ -34,7 +34,7 @@ public class ClientGui extends JFrame implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		String msg = jtf.getText() + "\n";
-		jta.append("클라이언트 : " + msg);
+		jta.append("클라이언트  : " + msg);
 		System.out.println(msg);
 		client.sendMessage(msg);
 		jtf.setText("");

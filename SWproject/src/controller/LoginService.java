@@ -13,7 +13,7 @@ public class LoginService {
          
         boolean test = loginTest("2013905020", "1234");
          
-        System.out.println("로그인 결과 :"+test);
+        System.out.println("로그인결과 :"+test);
     }
  
     public static boolean loginTest(String id, String password) {
@@ -39,17 +39,16 @@ public class LoginService {
             // 
             pstmt.setString(1, id);
  
-            // 연결
+            // 
             rs = pstmt.executeQuery();
  
             if (rs.next()) {
                 // 
                 getPass = rs.getString("password");
  
-                // 데이터베이스에서 읽어온 문자열과 사용자가 입력한 비밀번호가 같을 경우에는
-                // 참을 반환을 하겠죠?
+                // 
                 if (getPass.equals(password)) {
-                    System.out.println("받아온 비밀번호 : " + getPass);
+                    System.out.println("비밀번호는 : " + getPass);
                     flag = true;
                 }
             }
@@ -60,11 +59,11 @@ public class LoginService {
  
         } finally {
  
-            // 자원반납
+            // ����諛���
             pool.freeConnection(con, pstmt, rs);
         }
  
-        // 결과값 반납
+        // 
         return flag;
     }
 }

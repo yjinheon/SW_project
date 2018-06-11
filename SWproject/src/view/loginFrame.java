@@ -29,9 +29,9 @@ public class loginFrame extends JFrame implements ActionListener{
         new loginFrame();
     }
  
-    // ������
+    // 占쏙옙占쏙옙占쏙옙
     public loginFrame() {
-        setTitle("로그인");
+        setTitle("로그인화면");
         setSize(fweight, fheight);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE); //
         setLayout(null);
@@ -109,18 +109,18 @@ public class loginFrame extends JFrame implements ActionListener{
 		String password = new String(pass);
 		
 		if(e.getSource()==bt2) {
-			JOptionPane.showMessageDialog(null, "버튼2!");
+			JOptionPane.showMessageDialog(null, "버튼2");
 			new MemberProc();
 		}
 		
 		if(e.getSource()==bt) {
 		if(id.equals("") || password.equals("")) {
-			JOptionPane.showMessageDialog(null, "빈칸이 있음");
+			JOptionPane.showMessageDialog(null, "빈칸이 있어요");
 		}else {
 			boolean existLogin = LoginService.loginTest(id, password);
 			
 			if(existLogin) {
-				JOptionPane.showMessageDialog(null, "환영합니다");
+				JOptionPane.showMessageDialog(null, "환영해요");
 			}else {
 				JOptionPane.showMessageDialog(null, "로그인 실패");
 			}

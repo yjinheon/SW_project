@@ -28,27 +28,27 @@ public class PanSeat extends JPanel {
         panImg.setBounds(0, 0, 99, 99);
         panImg.setOpaque(false);
                  
-        //»óÅÂÁ¤º¸ ÆÐ³Î
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ð³ï¿½
         JPanel panContent = new JPanel();
         panContent.setLayout(null);
         panContent.setBounds(0, 0, 99, 99);
         int posLabel = 15;
         for (int i = 0; i < 4; i++) {
             if (i == 0)
-                label[i] = new JLabel((numSeat + 1) + ". ºóÀÚ¸®");
+                label[i] = new JLabel((numSeat + 1) + "ìžë¦¬");
             else
                 label[i] = new JLabel("");
  
             label[i].setBounds(20, posLabel, 80, 15);
             posLabel += 16;
             label[i].setForeground(new Color(36, 205, 198));
-            label[i].setFont(new Font("¹è´ÞÀÇ¹ÎÁ· ÇÑ³ª", 1, 12));
+           
             panContent.add(label[i]);
         }
         panContent.setOpaque(false);
          
          
-        //Á¦ÀÌ·¹ÀÌ¾îÆÐ³Î
+        //ï¿½ï¿½ï¿½Ì·ï¿½ï¿½Ì¾ï¿½ï¿½Ð³ï¿½
         JLayeredPane panLayered = new JLayeredPane();
         panLayered.setBounds(0, 0, 1600, 900);
         panLayered.setLayout(null);
@@ -64,7 +64,7 @@ public class PanSeat extends JPanel {
  
     public static void main(String[] args) {
         JFrame frameTest = new JFrame();
-        frameTest.setTitle("½ÃÆ®ÆÐ³Î");
+        frameTest.setTitle("ìžë¦¬");
         frameTest.add(new PanSeat(1));
         frameTest.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frameTest.setSize(99, 144);
@@ -80,11 +80,11 @@ public class PanSeat extends JPanel {
     }
  
     public void img(String filename) {
-        // ÀÌ¹ÌÁö ¹Þ¾Æ¿À±â - gameOn, gameOff (·Î±×ÀÎ, ·Î±×¿ÀÇÁ)
+        // ï¿½Ì¹ï¿½ï¿½ï¿½ ï¿½Þ¾Æ¿ï¿½ï¿½ï¿½ - gameOn, gameOff (ï¿½Î±ï¿½ï¿½ï¿½, ï¿½Î±×¿ï¿½ï¿½ï¿½)
         try {
             img = ImageIO.read(new File("img/img/"+filename+".png"));
         } catch (IOException e) {
-            System.out.println("ÀÌ¹ÌÁö ºÒ·¯¿À±â ½ÇÆÐ!");
+            System.out.println("ì˜ˆì‹œ!");
             System.exit(0);
         }
         repaint();

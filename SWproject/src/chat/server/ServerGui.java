@@ -10,7 +10,7 @@ public class ServerGui extends JFrame implements ActionListener {
 	
 	private JTextArea jta = new JTextArea(40,25);
 	private JTextField jtf = new JTextField(25);
-	//¿¬µ¿
+	//ï¿½ï¿½ï¿½ï¿½
 	private ServerBackground server = new ServerBackground();
 	
 	public ServerGui() {
@@ -21,7 +21,7 @@ public class ServerGui extends JFrame implements ActionListener {
 		setDefaultCloseOperation(EXIT_ON_CLOSE);
 		setVisible(true);
 		setBounds(200,100,400,600);
-		setTitle("¼­¹ö");
+		setTitle("ì„œë²„");
 		
 		server.setGui(this);
 		server.setting();
@@ -35,7 +35,7 @@ public class ServerGui extends JFrame implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
 		String msg = jtf.getText() + "\n";
-		jta.append("¼­¹ö : " + msg);
+		jta.append("ê´€ë¦¬ìë©”ì‹œì§€: " + msg);
 		System.out.println(msg);
 		
 		server.sendMessage(msg);
@@ -45,7 +45,7 @@ public class ServerGui extends JFrame implements ActionListener {
 
 	public void appendMsg(String msg) {
 		jta.append(msg);
-		System.out.print("³¯¶ó¿Â ¸Ş½ÃÁö : " + msg);
+		System.out.print("ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ş½ï¿½ï¿½ï¿½ : " + msg);
 		
 	}
 	
